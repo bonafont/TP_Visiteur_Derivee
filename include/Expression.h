@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+class Visitor;
+
 using namespace std;
 
 /**
@@ -33,6 +35,8 @@ virtual operator string() const = 0;
 Calcule la valeur de f(x)
 */
 virtual double evaluer(const double & x) const = 0;
+
+virtual Expression* accept( Visitor*)=0;
 };
 
 ostream & operator << ( ostream & os, const Expression * expression);

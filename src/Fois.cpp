@@ -1,4 +1,5 @@
 #include "../include/Fois.h"
+#include "../include/Visitor.h"
 
 Fois::Fois( Expression * operandeGauche,  Expression * operandeDroit):OpBinaire(operandeGauche,operandeDroit){}
 Fois::Fois( const Fois & fois):OpBinaire(fois){}
@@ -26,4 +27,7 @@ retourne x * y
 /*virtual*/ double Fois::effectuer(const double & x, const double & y) const
 {
 return x * y;
+}
+Expression* Fois::accept( Visitor* visitor){
+   return visitor->visite(this);
 }

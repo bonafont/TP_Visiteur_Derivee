@@ -2,7 +2,7 @@
 using namespace std;
 
 #include "../include/Constante.h"
-
+#include "../include/Visitor.h"
 
 /**
 crée la fonction constante : x |---> valeur
@@ -38,4 +38,8 @@ Calcule la valeur de f(x)
 /*virtual*/ double Constante::evaluer(const double & x) const
 {
 return valeur;
+}
+
+Expression* Constante::accept(Visitor *visitor) {
+    return visitor->visite(this);
 }

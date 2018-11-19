@@ -1,5 +1,5 @@
 #include "../include/Plus.h"
-
+#include "../include/Visitor.h"
 Plus::Plus( Expression * operandeGauche,  Expression * operandeDroit):OpBinaire(operandeGauche,operandeDroit){}
 Plus::Plus( const Plus & plus):OpBinaire(plus){}
 
@@ -26,4 +26,7 @@ retourne x + y
 /*virtual*/ double Plus::effectuer(const double & x, const double & y) const
 {
 return x + y;
+}
+Expression* Plus::accept( Visitor* visitor){
+    return visitor->visite(this);
 }
