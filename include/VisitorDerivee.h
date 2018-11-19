@@ -6,5 +6,6 @@ public:
     virtual Expression* visite(Constante*);
     virtual Expression* visite(Plus*);
     virtual Expression* visite(Fois*);
+    VisitorDerivee();
 };
 
