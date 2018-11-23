@@ -9,11 +9,11 @@ Expression* VisitorDerivee::visite(const Variable * variable)const {
 }
 
 Expression* VisitorDerivee::visite(const Plus * plus)const{
-    return new Plus(plus->getOpGauche()->accept(this)->clone(),plus->getOpDroite()->accept(this)->clone());
+    return new Plus(plus->getOpGauche()->accept(this),plus->getOpDroite()->accept(this));
 }
 
 Expression* VisitorDerivee::visite(const Fois * fois) const{
-    return new Plus(new Fois(fois->getOpGauche()->accept(this)->clone(),fois->getOpDroite()->clone()),new Fois(fois->getOpGauche()->clone(),fois->getOpDroite()->accept(this)->clone()));
+    return new Plus(new Fois(fois->getOpGauche()->accept(this),fois->getOpDroite()),new Fois(fois->getOpGauche(),fois->getOpDroite()->accept(this)));
 }
 
 VisitorDerivee::VisitorDerivee() {}

@@ -41,12 +41,11 @@ e6 = new Plus(e4,e5);		// on a construit x |--> x + 3
 
 e = new Fois(e3,e6); // on a construit x |---> (x - 2)(x + 3)
 
-resDerivee = e->accept(new VisitorDerivee());
 
 cout << "e1 = " << e1 << endl;		// doit afficher e1 = x
 cout << "e2 = " << e2 << endl;		// doit afficher e2 = -2
 cout << "e = " << e << endl;		// doit afficher e = ((x+-2)*(x+3))
-cout << "resDerivee = " << resDerivee << endl; // doit afficher la dérivée de e
+cout << "resDerivee = " << e->accept(new VisitorDerivee()) << endl; // doit afficher la dérivée de e
 
 //------------ on teste l'évaluation de l'expression construite ------------------------------
 
@@ -69,7 +68,6 @@ cout << "e = " << e << endl;			// doit afficher e = ((x+-4)*(x+1))
 // -------------------------- on teste le destructeur virtuel --------------------
 
 delete copie;
-delete resDerivee;
 
 cout << "la copie a été effacée, e = " << e << endl;			// doit afficher e = ((x+-4)*(x+1))1
 //-------------- la suite doit faire planter le pgm car l'arbre copie n'existe plus --------------------------
