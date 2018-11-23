@@ -27,7 +27,7 @@ Calcule la valeur de f(x)
 */
 virtual double evaluer(const double & x) const;
 
-virtual Expression* accept( Visitor*);
+virtual Expression* accept(const Visitor*)const;
 
 };
 

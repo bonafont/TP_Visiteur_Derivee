@@ -40,6 +40,6 @@ Calcule la valeur de f(x)
 return valeur;
 }
 
-Expression* Constante::accept(Visitor *visitor) {
+Expression* Constante::accept(const Visitor *visitor) const{
     return visitor->visite(this);
 }

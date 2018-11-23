@@ -25,6 +25,6 @@ Calcule la valeur de f(x)
 {
 return x;
 }
-Expression* Variable::accept( Visitor* visitor){
+Expression* Variable::accept(const Visitor* visitor)const{
     return visitor->visite(this);
 }

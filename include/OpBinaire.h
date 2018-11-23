@@ -39,7 +39,7 @@ repr�sente le calcul � effectuer.
 d�fini par les classes d�riv�es
 */
 virtual double effectuer(const double & x, const double & y) const = 0;
-inline Expression* getOpGauche(){ return gauche;}
-inline Expression* getOpDroite(){ return droit;}
+inline Expression* getOpGauche()const { return gauche;}
+inline Expression* getOpDroite()const { return droit;}
 };
 

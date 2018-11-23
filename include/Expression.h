@@ -36,7 +36,7 @@ Calcule la valeur de f(x)
 */
 virtual double evaluer(const double & x) const = 0;
 
-virtual Expression* accept( Visitor*)=0;
+virtual Expression* accept(const Visitor*)const=0;
 };
 
 ostream & operator << ( ostream & os, const Expression * expression);

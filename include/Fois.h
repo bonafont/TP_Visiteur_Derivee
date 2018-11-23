@@ -35,6 +35,6 @@ retourne x * y
 */
 virtual double effectuer(const double & x, const double & y) const;
 
-virtual Expression* accept( Visitor*);
+virtual Expression* accept(const Visitor*)const;
 };
 

@@ -28,6 +28,6 @@ retourne x * y
 {
 return x * y;
 }
-Expression* Fois::accept( Visitor* visitor){
+Expression* Fois::accept( const Visitor* visitor)const{
    return visitor->visite(this);
 }

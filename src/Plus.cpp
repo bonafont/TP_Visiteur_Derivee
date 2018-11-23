@@ -27,6 +27,6 @@ retourne x + y
 {
 return x + y;
 }
-Expression* Plus::accept( Visitor* visitor){
+Expression* Plus::accept( const Visitor* visitor)const{
     return visitor->visite(this);
 }
